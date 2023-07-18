@@ -5,6 +5,7 @@ export default function PreReqs() {
         <div>        
             <PageHeader title='Pre-Requisites'/>
             <div/>
+            <div/>
         </div>
     );
 }
