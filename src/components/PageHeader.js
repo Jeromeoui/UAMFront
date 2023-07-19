@@ -26,6 +26,7 @@ export default function PageHeader(props) {
         <Typography
             style={typographyStyles}
             component="h1"
+            fontWeight="bold"
             align="left">
             {title}
         </Typography>

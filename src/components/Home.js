@@ -5,7 +5,7 @@ import PageHeader from "./PageHeader";
 export default function Home() {
     return (
         <div>
-            <PageHeader title='Home'/>
+            {/* <PageHeader title='Home'/> */}
             <HomeImage/>
         </div>
 

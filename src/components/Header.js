@@ -14,6 +14,9 @@ import HelpIcon from '@mui/icons-material/Help'
 import { useMediaQuery } from '@mui/material';
 import SideMenu from './SideMenu';
 
+import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius, 
@@ -86,15 +89,30 @@ export default function SearchAppBar({onMenuClick}) {
                 </IconButton>
             </Grid>
         <Grid item xs={7} md={4}>
+          <Link to="/" style={{ textDecoration: 'none', color: 'white', display: 'flex',
+          '&:hover': {
+            textDecoration: 'none',
+            color: 'blue'
+          }, 
+        }}>
+          <Grid container alignItems="center" spacing={1.5}>
+          <Grid item>
+            <HomeIcon style={{ marginTop: '6px' }}/>
+          </Grid>
+          <Grid item>
             <Typography
                 variant="h6"
+                style={{ marginTop: '1px' }}
                 noWrap component="div"
                 // style={{ marginLeft : isXlScreen ? '-100px ': '-200px' }}
                 sx={{ flexGrow: 1 }}>
                 User Access Management (UAM)
             </Typography>
+            </Grid>
+            </Grid>
+          </Link>
         </Grid>
-        {isWindowMaximized && (
+        {/* {isWindowMaximized && (
           <Grid item xs={3}>
             <Search>
               <SearchIconWrapper>
@@ -107,7 +125,7 @@ export default function SearchAppBar({onMenuClick}) {
               />
             </Search>
           </Grid>
-        )}
+        )} */}
         {isWindowMaximized && (
           <Grid item xs={1}>
               <Button variant="contained" 

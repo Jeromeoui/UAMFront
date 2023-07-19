@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 const images = [
   {
     url: require('./assets/BlueDigitalNetwork.jpg'),
-    title: 'Welcome to the User Access Management (UAM) Site!',
+    title: 'Welcome to the User Access Management (UAM) Site',
     width: '40%',
   },
 ];
