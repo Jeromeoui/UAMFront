@@ -5,6 +5,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/system';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -42,6 +43,8 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
+
+
 export default function QnA(props) {
     const {data} = props;
   const [expanded, setExpanded] = React.useState([]);
@@ -78,4 +81,23 @@ export default function QnA(props) {
         ))}
     </div>
   );
+}
+
+export function Category(props) {
+    const {name} = props;
+
+    return (
+        <div>
+            <Box style={{background: '#0B2F70', height: '50px', alignItems: 'center', display: 'flex'}}>
+            <Typography
+                style={{fontSize: '20px', fontWeight: 'bold'}}
+                color="white"
+                fontWeight="bold"
+                marginLeft="30px"
+                align="left">
+            {name}
+            </Typography>
+            </Box>
+        </div>
+    );
 }
