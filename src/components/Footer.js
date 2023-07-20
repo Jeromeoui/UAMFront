@@ -6,7 +6,7 @@ import BackToTopButton from './BackToTop';
 
 export default function Footer() {
     const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
-    const [WindowHeight, setScreenHeight] = useState(window.innerHeight / 5);
+    const [WindowHeight, setScreenHeight] = useState(window.innerHeight / 7);
 
     useEffect(() => {
         const handleResize = () => {
