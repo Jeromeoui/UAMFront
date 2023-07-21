@@ -5,7 +5,7 @@ export default function PreReqs() {
     const PreReqData = [
         {
             qn: 'PreReq 1',
-            ans: `HAHALorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            ans: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
             malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
             sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
             sit amet blandit leo lobortis eget.`,

@@ -82,12 +82,12 @@ const ImageMarked = styled('span')(({ theme }) => ({
 export default function HomeImage() {
   
   const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
-  const [WindowHeight, setScreenHeight] = useState(window.innerHeight);
+  const [WindowHeight, setScreenHeight] = useState((window.innerHeight-56)/2);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      setScreenHeight(window.innerHeight);
+      setScreenHeight((window.innerHeight-56)/2);
     };
     
     window.addEventListener('resize', handleResize);

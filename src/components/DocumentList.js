@@ -17,45 +17,47 @@ import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { ListItemButton } from '@mui/material';
-
-function generate(element) {
-    return [0, 1, 2].map((value) =>
-      React.cloneElement(element, {
-        key: value,
-      }),
-    );
-  }
+import { useState, useEffect } from 'react';
 
 const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
   }));
 
 export default function DocList({title, documents}){
-    const [dense, setDense] = React.useState(false);
-    const [secondary, setSecondary] = React.useState(false);
-    // const {title} = prop1;
-    // const {documents} = prop2;
+ 
+    const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
+    const [WindowHeight, setScreenHeight] = useState((window.innerHeight-56)/2);
+
+    useEffect(() => {
+        const handleResize = () => {
+        setScreenWidth(window.innerWidth);
+        setScreenHeight((window.innerHeight-56)/2);
+        };
+        
+        window.addEventListener('resize', handleResize);
+    }, []);
 
     return (
         <Grid item xs={12} md={6} >
-            <Grid container direction="column" alignItems="flex" display='flex'>
-                
+            <Grid container direction="column" alignItems="flex" display='flex' sx={{height: WindowHeight, backgroundColor: "#F2F5FA"}}>
+                <Grid item xs={12} sx={{ p: 2 }}>
                 <Typography sx={{ mt: 4, mb: 2, pl: 4.5 }} variant="h6" component="div" align="left" fontWeight="bold">
                     {title}
                 </Typography>
-                <Box sx={{ height: '250px', overflow: 'auto' }}>
+                </Grid>
+                <Grid item xs={12} sx={{ height: WindowHeight, minHeight: WindowHeight, overflow: 'auto', flexGrow: 1 }}>
                 <Demo>
-                    <List dense={dense}>
+                    <List style={{minHeight: WindowHeight}}>
                         {
-                            documents.map((item) => (
-                                <ListItem>
+                            documents.map((item, index) => (
+                                <ListItem key={index}>
                                     <ListItemButton component="a" href={item.url}>
                                         <ListItemIcon>
                                             <PictureAsPdfIcon style={{ color: '#ff0000' }} />
                                         </ListItemIcon>
                                         <ListItemText
                                             primary={item.docname}
-                                            secondary={secondary ? 'Secondary text' : null}
+                                            // secondary={secondary ? 'Test' : "Test"}
                                         />
                                     </ListItemButton>
                                 </ListItem>
@@ -63,7 +65,7 @@ export default function DocList({title, documents}){
                         }
                     </List>
                 </Demo>
-                </Box>
+                </Grid>
             </Grid>
         </Grid>
     );

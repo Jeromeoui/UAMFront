@@ -1,20 +1,22 @@
 import { useEffect, useState } from 'react';
-import { Box } from '@mui/system';
+import { Box, minHeight } from '@mui/system';
 import Typography from '@mui/material/Typography';
-import { Container } from '@mui/material';
 import BackToTopButton from './BackToTop';
 
 export default function Footer() {
     const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
-    const [WindowHeight, setScreenHeight] = useState(window.innerHeight / 7);
+    const [WindowHeight, setScreenHeight] = useState(window.innerHeight/7);
 
     useEffect(() => {
         const handleResize = () => {
         setScreenWidth(window.innerWidth);
-        setScreenHeight(window.innerHeight / 5);
+        setScreenHeight(window.innerHeight/7);
         };
         
         window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     const BoxStyles = {
@@ -25,17 +27,12 @@ export default function Footer() {
         py: 6,
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
+        
       };
 
     return (
         <Box style={BoxStyles}>
-            <Container maxWidth="lg">
-                {/* <Typography 
-                    variant="h6" 
-                    align="center" 
-                    gutterBottom color="white">
-                    Test
-                </Typography> */}
                 <BackToTopButton/>
                 <Typography
                     variant="subtitle1"
@@ -45,7 +42,6 @@ export default function Footer() {
                     component="p">
                     For any further queries, kindly contact the UAM team via UAM@ihis.com.sg
                 </Typography>
-            </Container>
         </Box>
     );
 }

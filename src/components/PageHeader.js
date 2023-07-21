@@ -6,7 +6,7 @@ export default function PageHeader(props) {
     const {title} = props;
     const containerStyles = {
         width: '100%',
-        height: '250px',
+        height: '200px',
         backgroundImage: `url(${require('./assets/PurpleDigitalNetwork1.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
