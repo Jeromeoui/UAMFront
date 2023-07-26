@@ -101,7 +101,7 @@ export function About(){
     const isXlScreen = useMediaQuery('(min-width: 1920px)');
 
     return (
-        <Box sx={{maxWidth: window.innerWidth}}>
+        <Box sx={{maxWidth: window.innerWidth}} >
                 <Typography sx={{ mt: 4, mb: 0, pl: 4.5 }} variant="h6" component="div" align="left" fontWeight="bold">
                     {about.header}
                 </Typography>
