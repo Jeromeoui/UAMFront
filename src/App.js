@@ -4,20 +4,20 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, createBrowserRouter } from 'react-router-dom';
 import Home from './components/Home';
 import PreReqs from './components/PreReqs';
 import Processes from './components/Processes';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
-import NotFound from './NotFound';
-import 'typeface-roboto';
+import NotFound from './components/NotFound';
+
 
 function App() {
 
   const theme = createTheme({
     typography: {
-      fontFamily: 'Roboto',
+      fontFamily: 'Trebuchet MS',
     },
   });
 
@@ -44,3 +44,17 @@ function App() {
 }
 
 export default App;
+
+// export const route = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App />,
+//     children: [
+//       {path: '', element: <Home/>},
+//       {path: 'prereqs', element: <PreReqs/>},
+//       {path: 'processes', element: <Processes/>},
+//       {path: 'faq', element: <FAQ/>},
+//       {path: '*', element: <NotFound/>},
+//     ]  
+//   }
+// ])

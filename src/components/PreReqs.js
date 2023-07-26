@@ -1,5 +1,6 @@
 import PageHeader from "./PageHeader";
 import QnA from "./QnA";
+import Picture from "./assets/Blue3.jpg"
 
 export default function PreReqs() {
     const PreReqData = [
@@ -27,7 +28,7 @@ export default function PreReqs() {
     ];
     return (
         <div>        
-            <PageHeader title='Pre-Requisites'/>
+            <PageHeader title='Pre-Requisites' pic={Picture}/>
             <QnA data={PreReqData}/>
         </div>
     );

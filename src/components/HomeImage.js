@@ -5,24 +5,32 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';;
 
 const images = [
   {
-    url: require('./assets/BlueDigitalNetwork.jpg'),
+    url: require('./assets/Blue1.jpg'),
     title: 'Welcome to the User Access Management (UAM) Site',
     width: '40%',
   },
 ];
 
 const ImageButton = styled(ButtonBase)(({ theme }) => ({
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+  },
   position: 'relative',
   height: 200,
   [theme.breakpoints.down('sm')]: {
     width: '100% !important', // Overrides inline-style
     height: 100,
   },
-  '&:hover, &.Mui-focusVisible': {
+  '&:hover': {
+    disableRipple: true,
     zIndex: 1,
     '& .MuiImageBackdrop-root': {
       opacity: 0.15,
@@ -98,12 +106,13 @@ export default function HomeImage() {
     <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
-          focusRipple
           key={image.title}
           style={{
             width: WindowWidth, 
             height: WindowHeight
           }}
+          disableRipple={true}
+          disableTouchRipple={true}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />

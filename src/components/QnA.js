@@ -47,7 +47,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export default function QnA(props) {
     const {data} = props;
-  const [expanded, setExpanded] = React.useState([]);
+  const [expanded, setExpanded] = React.useState(data.map((_, index) => `panel${index}`));
 
   const handleChange = (panel) => (event, isExpanded) => {
     if (isExpanded) {

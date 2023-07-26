@@ -1,5 +1,6 @@
 import PageHeader from "./PageHeader";
 import QnA from "./QnA";
+import Picture from "./assets/Blue4.jpg"
 
 export default function Processes() {
     const ProcessesData = [
@@ -27,7 +28,7 @@ export default function Processes() {
     ];
     return (
         <div>
-            <PageHeader title='Processes'/>
+            <PageHeader title='Processes' pic={Picture}/>
             <QnA data={ProcessesData}/>
         </div>
     );

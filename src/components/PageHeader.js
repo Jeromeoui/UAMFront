@@ -2,12 +2,11 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Typography from '@mui/material/Typography';
 
-export default function PageHeader(props) {
-    const {title} = props;
+export default function PageHeader({title, pic}) {
     const containerStyles = {
         width: '100%',
         height: '200px',
-        backgroundImage: `url(${require('./assets/PurpleDigitalNetwork1.jpg')})`,
+        backgroundImage: `url(${pic})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',

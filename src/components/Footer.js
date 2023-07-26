@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Box, minHeight } from '@mui/system';
+import { Box } from '@mui/system';
 import Typography from '@mui/material/Typography';
 import BackToTopButton from './BackToTop';
 

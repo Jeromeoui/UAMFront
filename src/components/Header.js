@@ -1,22 +1,15 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
-import HelpIcon from '@mui/icons-material/Help'
 import { useMediaQuery } from '@mui/material';
-
 
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
-import { responsiveFontSizes, createTheme, ThemeProvider } from '@mui/material/styles';
-import { height } from '@mui/system';
-import { NavLink } from 'react-router-dom';
 
 const pages = [
   {
@@ -33,7 +26,7 @@ const pages = [
   },
 ];
 
-export default function SearchAppBar({onMenuClick}) {
+export default function SearchAppBar() {
   const isWindowMaximized = useMediaQuery('(min-width: 960px)');
   const isXlScreen = useMediaQuery('(min-width: 1920px)');
 
@@ -77,7 +70,7 @@ export default function SearchAppBar({onMenuClick}) {
           <Grid item>
             <Typography
                 variant="h6"
-                style={{ marginTop: '-4px', fontSize: '18px' }}
+                style={{ marginTop: '-4px', fontSize: '20px' }}
                 noWrap component="div"
                 // style={{ marginLeft : isXlScreen ? '-100px ': '-200px' }}
                 sx={{ flexGrow: 1,
@@ -100,20 +93,10 @@ export default function SearchAppBar({onMenuClick}) {
           <Grid item xs={3} md={4}>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex", lg: "flex" }}}>
             {pages.map((page, index) => (
-              // <NavLink
-              //   key={page.title}
-              //   to={page.url}
-              //   style={{
-              //     textDecoration: 'none',
-              //   }}
-              //   activeStyle={{
-              //     color: 'blue', // Change the color for the active page
-              //   }}
-              // >
               <Button
                 key={index}
                 sx={{ my: 2.4, mx: {md: 0, lg: 2}, color: "white", display: "block",
-                fontSize: {md: "14px", lg: "15px"},
+                fontSize: {md: "15px", lg: "17px"},
                 marginTop: '16px', 
                 '&:hover': {
                   textDecoration: 'none',
@@ -140,20 +123,12 @@ export default function SearchAppBar({onMenuClick}) {
           <Grid item>
               <Button variant="contained" 
               component='a' href="https://hiskcuivsweb01.healthgrp.com.sg/uam"
-              style={{ marginRight : isXlScreen ? '20px ': '15px' }}
+              style={{ marginRight : isXlScreen ? '25px ': '15px' }}
               >Login
               </Button>
           </Grid>
-          <Grid item>
-              <IconButton color="white" aria-label="add an alarm">
-                  <HelpIcon/>
-              </IconButton>
-          </Grid>
           </Grid>
         </div>
-        // )}
-        // {isWindowMaximized && (
-          
         )}
         </Grid>
         </Toolbar>

@@ -1,6 +1,7 @@
 import PageHeader from "./PageHeader";
 import QnA from "./QnA";
 import { Category } from "./QnA";
+import Picture from './assets/Blue7.jpg'
 
 export default function FAQ() {
     const qData = [
@@ -53,7 +54,7 @@ export default function FAQ() {
 
     return (
         <div>
-            <PageHeader title='FAQ'/>
+            <PageHeader title='FAQ' pic={Picture}/>
             <Category name='General'/>
             <QnA data={qData}/>
             <Category name='Users'/>

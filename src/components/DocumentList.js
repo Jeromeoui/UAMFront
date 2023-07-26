@@ -1,20 +1,11 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import FolderIcon from '@mui/icons-material/Folder';
-import DeleteIcon from '@mui/icons-material/Delete';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { ListItemButton } from '@mui/material';
 import { useState, useEffect } from 'react';
@@ -24,14 +15,14 @@ const Demo = styled('div')(({ theme }) => ({
   }));
 
 export default function DocList({title, documents}){
- 
+    // (window.innerHeight-56)/2
     const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
-    const [WindowHeight, setScreenHeight] = useState((window.innerHeight-56)/2);
+    const [WindowHeight, setScreenHeight] = useState();
 
     useEffect(() => {
         const handleResize = () => {
         setScreenWidth(window.innerWidth);
-        setScreenHeight((window.innerHeight-56)/2);
+        setScreenHeight();
         };
         
         window.addEventListener('resize', handleResize);
@@ -39,15 +30,15 @@ export default function DocList({title, documents}){
 
     return (
         <Grid item xs={12} md={6} >
-            <Grid container direction="column" alignItems="flex" display='flex' sx={{height: WindowHeight, backgroundColor: "#F2F5FA"}}>
-                <Grid item xs={12} sx={{ p: 2 }}>
+            <Grid container alignItems="flex" display='flex' sx={{width: WindowWidth, height: WindowHeight, backgroundColor: "#F2F5FA"}}>
+                <Grid item xs={12} sx={{ p: 2, marginTop: '-10px' }}>
                 <Typography sx={{ mt: 4, mb: 2, pl: 4.5 }} variant="h6" component="div" align="left" fontWeight="bold">
                     {title}
                 </Typography>
                 </Grid>
-                <Grid item xs={12} sx={{ height: WindowHeight, minHeight: WindowHeight, overflow: 'auto', flexGrow: 1 }}>
+                <Grid item xs={12}>
                 <Demo>
-                    <List style={{minHeight: WindowHeight}}>
+                    <List style={{minHeight: WindowHeight, padding: 0 }}>
                         {
                             documents.map((item, index) => (
                                 <ListItem key={index}>
