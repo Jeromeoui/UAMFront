@@ -4,7 +4,7 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-import { BrowserRouter as Router, Routes, Route, createBrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, createBrowserRouter, Outlet } from 'react-router-dom';
 import Home from './components/Home';
 import PreReqs from './components/PreReqs';
 import Processes from './components/Processes';
@@ -25,19 +25,11 @@ function App() {
     <div className="App" >
       <ThemeProvider theme={theme}>
       <CssBaseline/>
-      <Router>
       <Header/>
       <div className='content'>
-        <Routes>
-          <Route exact path="/" element={<Home/>} />
-          <Route path="/prereqs" element={<PreReqs/>} />
-          <Route path="/processes" element={<Processes/>} />
-          <Route path="/faq" element={<FAQ/>} />
-          <Route path="*" element={<NotFound/>} />
-        </Routes>
+        <Outlet/>
         <Footer/>
       </div>
-      </Router>
       </ThemeProvider>
     </div>
   );
@@ -58,3 +50,11 @@ export default App;
 //     ]  
 //   }
 // ])
+
+          // <Routes>
+          //   <Route exact path="" element={<Home/>} />
+          //   <Route path="prereqs" element={<PreReqs/>} />
+          //   <Route path="processes" element={<Processes/>} />
+          //   <Route path="faq" element={<FAQ/>} />
+          //   <Route path="*" element={<NotFound/>} />
+          // </Routes>
