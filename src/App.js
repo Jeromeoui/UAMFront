@@ -3,7 +3,7 @@ import Header from './components/Header'
 import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import Footer from './components/Footer';
 
 
