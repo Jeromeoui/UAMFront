@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { useMediaQuery } from '@mui/material';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
 
 const pages = [
@@ -29,6 +29,7 @@ const pages = [
 export default function SearchAppBar() {
   const isWindowMaximized = useMediaQuery('(min-width: 960px)');
   const isXlScreen = useMediaQuery('(min-width: 1920px)');
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -107,8 +108,7 @@ export default function SearchAppBar() {
                   color: '#5EA7FB'
                 }, 
                 }}
-                component='a'
-                href={page.url}
+                onClick={() => navigate(page.url)}
               >
                 {page.title}
               </Button>

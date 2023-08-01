@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import { ListItemButton } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Demo = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.background.paper,
@@ -18,6 +19,7 @@ export default function DocList({title, documents}){
     // (window.innerHeight-56)/2
     const [WindowWidth, setScreenWidth] = useState(window.innerWidth);
     const [WindowHeight, setScreenHeight] = useState();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleResize = () => {
@@ -42,7 +44,9 @@ export default function DocList({title, documents}){
                         {
                             documents.map((item, index) => (
                                 <ListItem key={index}>
-                                    <ListItemButton component="a" href={item.url}>
+                                    <ListItemButton 
+                                    onClick={() => navigate(item.url)}
+                                    >
                                         <ListItemIcon>
                                             <PictureAsPdfIcon style={{ color: '#ff0000' }} />
                                         </ListItemIcon>
