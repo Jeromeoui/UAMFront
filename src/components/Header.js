@@ -121,11 +121,13 @@ export default function SearchAppBar() {
         <div>
           <Grid container alignItems="center" justifyContent="flex-end">
           <Grid item>
+            <Link to="https://hiskcuivsweb01.healthgrp.com.sg/uam">
               <Button variant="contained" 
-              component='a' href="https://hiskcuivsweb01.healthgrp.com.sg/uam"
+              // component='a' href="https://hiskcuivsweb01.healthgrp.com.sg/uam"
               style={{ marginRight : isXlScreen ? '25px ': '15px' }}
               >Login
               </Button>
+            </Link>
           </Grid>
           </Grid>
         </div>
