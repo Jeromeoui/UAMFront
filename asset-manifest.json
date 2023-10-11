@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/UAMFront/static/css/main.d0c2b740.css",
+    "main.js": "/UAMFront/static/js/main.d1386aa5.js",
+    "static/js/787.ab789ae0.chunk.js": "/UAMFront/static/js/787.ab789ae0.chunk.js",
+    "static/media/Blue7.jpg": "/UAMFront/static/media/Blue7.45eba1d81be6196f9d62.jpg",
+    "static/media/Blue4.jpg": "/UAMFront/static/media/Blue4.69c339d8a4b9510c0197.jpg",
+    "static/media/Blue3.jpg": "/UAMFront/static/media/Blue3.87490fd3329a8530462b.jpg",
+    "static/media/Blue1.jpg": "/UAMFront/static/media/Blue1.82458e8e50142e9a06fb.jpg",
+    "static/media/Purple5.jpg": "/UAMFront/static/media/Purple5.93b701f52f3f948e219e.jpg",
+    "index.html": "/UAMFront/index.html",
+    "main.d0c2b740.css.map": "/UAMFront/static/css/main.d0c2b740.css.map",
+    "main.d1386aa5.js.map": "/UAMFront/static/js/main.d1386aa5.js.map",
+    "787.ab789ae0.chunk.js.map": "/UAMFront/static/js/787.ab789ae0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0c2b740.css",
+    "static/js/main.d1386aa5.js"
+  ]
+}
