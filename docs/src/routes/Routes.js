@@ -6,8 +6,8 @@ import Processes from "../components/Processes"
 import FAQ from "../components/FAQ"
 import NotFound from "../components/NotFound"
 
-// const basename = '/uamweb/'
-const basename = ''
+const basename = '/uamweb/'
+// const basename = ''
 
 export const route = createBrowserRouter([
   {
