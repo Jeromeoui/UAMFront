@@ -6,19 +6,19 @@ import Processes from "../components/Processes"
 import FAQ from "../components/FAQ"
 import NotFound from "../components/NotFound"
 
-const basename = '/uamweb/'
-// const basename = ''
+// const basename = '/uamweb/'
+const basename = ''
 
 export const route = createBrowserRouter([
   {
     path: '/',
-    element: <App/>,
+    element: <App />,
     children: [
-      {path: '', element: <Home/>},
-      {path: 'prereqs', element: <PreReqs/>},
-      {path: 'processes', element: <Processes/>},
-      {path: 'faq', element: <FAQ/>},
-      {path: '*', element: <NotFound/>},
+      { path: '', element: <Home /> },
+      { path: 'prereqs', element: <PreReqs /> },
+      { path: 'processes', element: <Processes /> },
+      { path: 'faq', element: <FAQ /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ], { basename });
