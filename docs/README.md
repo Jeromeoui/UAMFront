@@ -2,7 +2,7 @@
 Landing page frontend application built in React that provides access to Synapxe Singapore's User Access Matrix backend application.
 
 ## Visualization
-# Homepage 
+### Homepage 
 <img width="401" alt="image" src="./src/components/assets/readme1.png">
 
 # Pre-Requisites
