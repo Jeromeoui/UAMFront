@@ -5,14 +5,14 @@ Landing page frontend application built in React that provides access to Synapxe
 ### Homepage 
 <img width="401" alt="image" src="./src/components/assets/readme1.png">
 
-# Pre-Requisites
+### Pre-Requisites
 <img width="401" alt="image" src="./src/components/assets/readme2.png">
 
-# Processes
+### Processes
 <img width="401" alt="image" src="./src/components/assets/readme3.png">
 
-# FAQ
+### FAQ
 <img width="401" alt="image" src="./src/components/assets/readme4.png">
 
-# Error page
+### Error page
 <img width="401" alt="image" src="./src/components/assets/readme5.png">
